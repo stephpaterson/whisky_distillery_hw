@@ -12,4 +12,17 @@ public interface WhiskyRepository extends JpaRepository<Whisky, Long> {
     List<Whisky> findByAgeAndDistilleryName( int age, String distillery);
 
     List<Whisky> findByDistilleryRegion(String region);
+
+    List<Whisky> findByAgeLessThanEqual(int age);
+
+    // 12 years old -> (2022-year) + age = 12
+//    get all the whiskies
+
+//    empty set
+//    for each whisky, if age<12:
+//      if ((age + (2022-year)) == 12)
+//            add to whisky distillery name to set
+//    return set
+//
+
 }
