@@ -30,9 +30,9 @@ public class WhiskyController {
         else
         return new ResponseEntity<>(whiskyRepository.findAll(), HttpStatus.OK);
     }
-    
 
-    @GetMapping(value="/whiskies/{age}/{name}")
+
+    @GetMapping(value="/whiskies/{age}/distillery/{name}")
     public ResponseEntity<List<Whisky>> getWhiskyByDistAndYear(@PathVariable int age, @PathVariable String name){
         return new ResponseEntity<>(whiskyRepository.findByAgeAndDistilleryName(age, name), HttpStatus.OK);
     }
